@@ -9,14 +9,12 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 
 
 
-// GET register page
+
 router.get("/register", isAlreadyLoggedIn, (req, res) => {
     res.render("register", { error: null });
 });
 
 
-
-// POST register
 router.post("/register", isAlreadyLoggedIn, async (req, res) => {
     try {
         const { name, email, password } = req.body;
@@ -54,16 +52,11 @@ router.post("/register", isAlreadyLoggedIn, async (req, res) => {
 
 
 
-
-// GET login page
 router.get("/login", isAlreadyLoggedIn, (req, res) => {
     res.render("login", { error: null });
 });
 
 
-
-
-// POST login
 router.post("/login", isAlreadyLoggedIn, async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -93,14 +86,10 @@ router.post("/login", isAlreadyLoggedIn, async (req, res) => {
 });
 
 
-
-// GET logout
 router.get("/logout", isLoggedIn, (req, res) => {
     res.clearCookie("token");
     res.redirect("/auth/login");
 });
-
-
 
 
 

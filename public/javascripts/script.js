@@ -1,9 +1,4 @@
-// ===========================================================
-// DARK MODE LOGIC
-// ===========================================================
-// We just toggle a "dark" class on <body> and remember the
-// choice in localStorage so it persists across page loads.
-// ===========================================================
+
 
 (function () {
     const root = document.documentElement;
@@ -46,3 +41,5 @@
         }
     });
 })();
+
+

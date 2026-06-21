@@ -5,18 +5,19 @@ const Item = require("../models/Item");
 const User = require("../models/User");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
-// DASHBOARD
+
 router.get("/dashboard", isLoggedIn, async (req, res) => {
     const itemCount = await Item.countDocuments({ owner: req.user.id });
     res.render("dashboard", { user: req.user, itemCount });
 });
 
-// GET add item page
+
+
 router.get("/add", isLoggedIn, (req, res) => {
     res.render("addItem", { user: req.user, error: null });
 });
 
-// POST add item -> qrData (base64 png) comes from client already generated
+
 router.post("/add", isLoggedIn, async (req, res) => {
     try {
         const { itemname, description, ownername, ownerPhone, qrData, qrText } = req.body;
@@ -44,14 +45,13 @@ router.post("/add", isLoggedIn, async (req, res) => {
     }
 });
 
-// GET all items belonging to logged in user
+
 router.get("/all", isLoggedIn, async (req, res) => {
     const items = await Item.find({ owner: req.user.id }).sort({ createdAt: -1 });
     res.render("allItems", { user: req.user, items });
 });
 
 
-// GET single item (used by QR scan -> verify page, public route, no login needed)
 router.get("/verify/:id", async (req, res) => {
     try {
         const item = await Item.findById(req.params.id);
@@ -64,12 +64,12 @@ router.get("/verify/:id", async (req, res) => {
     }
 });
 
-// GET scan page (camera based scanner)
+
 router.get("/scan", isLoggedIn, (req, res) => {
     res.render("scan", { user: req.user });
 });
 
-// DELETE item
+
 router.post("/delete/:id", isLoggedIn, async (req, res) => {
     try {
         const item = await Item.findOne({ _id: req.params.id, owner: req.user.id });
