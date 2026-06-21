@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Scan QR - QR Keepers</title>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/navbar', { user: user }) %>
+
+    <section class="form-section">
+        <div class="form-card scan-card">
+            <h2>📷 Scan a QR Code</h2>
+            <p class="auth-sub">Point your camera at a QR Keepers sticker</p>
+
+            <video id="scanVideo" class="scan-video" playsinline></video>
+            <canvas id="scanCanvas" style="display:none;"></canvas>
+
+            <div id="scanResultBox" class="scan-result" style="display:none;">
+                <h4>Decoded content:</h4>
+                <pre id="scanResultText"></pre>
+                <button id="scanAgainBtn" class="btn btn-outline btn-block">Scan Again</button>
+            </div>
+
+            <p id="scanStatus" class="qr-hint">Starting camera...</p>
+        </div>
+    </section>
+
+    <!-- decoder library (reads QR from camera frames) -->
+    <script src="/javascripts/jsQR.js"></script>
+    <script src="/javascripts/script.js"></script>
+    <script src="/javascripts/scan.js"></script>
+</body>
+</html>

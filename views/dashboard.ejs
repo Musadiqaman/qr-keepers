@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard - QR Keepers</title>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/navbar', { user: user }) %>
+
+    <section class="dashboard">
+        <h1>Hey, <%= user.name %> 👋</h1>
+        <p class="dashboard-sub">Here's a quick overview of your account</p>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number"><%= itemCount %></div>
+                <div class="stat-label">Items Registered</div>
+            </div>
+        </div>
+
+        <div class="dashboard-actions">
+            <a href="/items/add" class="action-card">
+                <span class="action-icon">➕</span>
+                <span>Add New Item</span>
+            </a>
+            <a href="/items/all" class="action-card">
+                <span class="action-icon">📋</span>
+                <span>View All Items</span>
+            </a>
+            <a href="/items/scan" class="action-card">
+                <span class="action-icon">📷</span>
+                <span>Scan QR Code</span>
+            </a>
+            <a href="/profile" class="action-card">
+                <span class="action-icon">⚙️</span>
+                <span>Profile Settings</span>
+            </a>
+        </div>
+    </section>
+
+    <script src="/javascripts/script.js"></script>
+</body>
+</html>

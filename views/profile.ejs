@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Profile - QR Keepers</title>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/navbar', { user: user }) %>
+
+    <section class="form-section">
+        <div class="form-card">
+            <h2>Profile Settings</h2>
+            <p class="auth-sub">Manage your account</p>
+
+            <% if (success) { %>
+                <div class="alert alert-success"><%= success %></div>
+            <% } %>
+            <% if (error) { %>
+                <div class="alert alert-error"><%= error %></div>
+            <% } %>
+
+            <div class="profile-info">
+                <p><strong>Name:</strong> <%= user.name %></p>
+                <p><strong>Email:</strong> <%= user.email %></p>
+            </div>
+
+            <hr class="divider">
+
+            <h3>Change Password</h3>
+            <form action="/profile/change-password" method="POST" class="auth-form">
+                <label>Current Password</label>
+                <input type="password" name="currentPassword" required>
+
+                <label>New Password</label>
+                <input type="password" name="newPassword" required minlength="6">
+
+                <label>Confirm New Password</label>
+                <input type="password" name="confirmPassword" required minlength="6">
+
+                <button type="submit" class="btn btn-primary btn-block">Update Password</button>
+            </form>
+
+            <hr class="divider">
+
+            <h3>Appearance</h3>
+            <div class="appearance-row">
+                <span>Dark Mode</span>
+                <label class="switch">
+                    <input type="checkbox" id="darkModeSwitch">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+    </section>
+
+    <script src="/javascripts/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>QR Keepers - Never Lose Your Items Again</title>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Tag it. <span class="accent">QR</span> it. Find it.</h1>
+            <p>QR Keepers helps you label your belongings with a scannable QR code so anyone who finds them can instantly see your contact info and return them.</p>
+            <div class="hero-actions">
+                <a href="/auth/register" class="btn btn-primary">Get Started Free</a>
+                <a href="/auth/login" class="btn btn-outline">Login</a>
+            </div>
+        </div>
+        <div class="hero-art">
+            <div class="qr-float">📱</div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">🏷️</div>
+            <h3>Register Items</h3>
+            <p>Add your bags, laptops, bikes — anything — with owner details.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔳</div>
+            <h3>Auto QR Generation</h3>
+            <p>A unique QR code is generated instantly and saved to your account.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📲</div>
+            <h3>Scan Anywhere</h3>
+            <p>Use your camera to scan and verify items on the go.</p>
+        </div>
+    </section>
+
+    <script src="/javascripts/script.js"></script>
+</body>
+</html>

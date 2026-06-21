@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Items - QR Keepers</title>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/navbar', { user: user }) %>
+
+    <section class="items-section">
+        <div class="items-header">
+            <h2>My Items</h2>
+            <a href="/items/add" class="btn btn-primary">+ Add Item</a>
+        </div>
+
+        <% if (items.length === 0) { %>
+            <div class="empty-state">
+                <p>You haven't registered any items yet.</p>
+                <a href="/items/add" class="btn btn-primary">Register your first item</a>
+            </div>
+        <% } else { %>
+            <div class="items-grid">
+                <% items.forEach(item => { %>
+                    <div class="item-card">
+                        <img src="<%= item.qrData %>" alt="QR for <%= item.itemname %>" class="item-qr">
+                        <h3><%= item.itemname %></h3>
+                        <p class="item-desc"><%= item.description %></p>
+                        <p class="item-meta">👤 <%= item.ownername %></p>
+                        <p class="item-meta">📞 <%= item.ownerPhone %></p>
+
+                        <div class="item-actions">
+                            <a href="<%= item.qrData %>" download="<%= item.itemname %>-qr.png" class="btn btn-small btn-outline">Download</a>
+                            <form action="/items/delete/<%= item._id %>" method="POST" onsubmit="return confirm('Delete this item?')">
+                                <button type="submit" class="btn btn-small btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        <% } %>
+    </section>
+
+    <script src="/javascripts/script.js"></script>
+</body>
+</html>

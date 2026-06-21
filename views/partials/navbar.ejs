@@ -1,0 +1,24 @@
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="/" class="nav-logo">📦 QR Keepers</a>
+
+        <button class="nav-toggle" id="navToggle">☰</button>
+
+        <ul class="nav-links" id="navLinks">
+            <% if (typeof user !== 'undefined' && user) { %>
+                <li><a href="/items/dashboard">Dashboard</a></li>
+                <li><a href="/items/add">Add Item</a></li>
+                <li><a href="/items/all">My Items</a></li>
+                <li><a href="/items/scan">Scan QR</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/auth/logout" class="btn-nav-logout">Logout</a></li>
+            <% } else { %>
+                <li><a href="/auth/login">Login</a></li>
+                <li><a href="/auth/register" class="btn-nav-cta">Get Started</a></li>
+            <% } %>
+            <li>
+                <button id="darkModeToggle" class="theme-btn" title="Toggle dark mode">🌙</button>
+            </li>
+        </ul>
+    </div>
+</nav>

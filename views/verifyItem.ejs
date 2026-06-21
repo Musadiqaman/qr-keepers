@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Item Verification - QR Keepers</title>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+
+    <section class="auth-section">
+        <div class="auth-card">
+            <h2>📦 <%= item.itemname %></h2>
+            <p class="auth-sub">This item is registered on QR Keepers</p>
+
+            <div class="verify-details">
+                <p><strong>Description:</strong> <%= item.description %></p>
+                <p><strong>Owner:</strong> <%= item.ownername %></p>
+                <p><strong>Phone:</strong> <a href="tel:<%= item.ownerPhone %>"><%= item.ownerPhone %></a></p>
+            </div>
+
+            <p class="qr-hint">Found this item? Please contact the owner above to return it. 🙏</p>
+        </div>
+    </section>
+
+    <script src="/javascripts/script.js"></script>
+</body>
+</html>

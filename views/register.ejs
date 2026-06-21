@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register - QR Keepers</title>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/navbar') %>
+
+    <section class="auth-section">
+        <div class="auth-card">
+            <h2>Create your account</h2>
+            <p class="auth-sub">Start tagging your items in seconds</p>
+
+            <% if (error) { %>
+                <div class="alert alert-error"><%= error %></div>
+            <% } %>
+
+            <form action="/auth/register" method="POST" class="auth-form">
+                <label>Full Name</label>
+                <input type="text" name="name" placeholder="John Doe" required>
+
+                <label>Email</label>
+                <input type="email" name="email" placeholder="you@example.com" required>
+
+                <label>Password</label>
+                <input type="password" name="password" placeholder="••••••••" required minlength="6">
+
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            </form>
+
+            <p class="auth-switch">Already have an account? <a href="/auth/login">Login</a></p>
+        </div>
+    </section>
+
+    <script src="/javascripts/script.js"></script>
+</body>
+</html>

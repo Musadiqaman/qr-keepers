@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Item - QR Keepers</title>
+    <%- include('partials/head') %>
+</head>
+<body>
+    <%- include('partials/navbar', { user: user }) %>
+
+    <section class="form-section">
+        <div class="form-card">
+            <h2>Register a new item</h2>
+            <p class="auth-sub">Fill the details below, then generate the QR code before saving</p>
+
+            <% if (error) { %>
+                <div class="alert alert-error"><%= error %></div>
+            <% } %>
+
+            <form action="/items/add" method="POST" id="addItemForm" class="auth-form">
+                <label>Item Name</label>
+                <input type="text" name="itemname" id="itemname" placeholder="e.g. Dell Laptop" required>
+
+                <label>Description</label>
+                <textarea name="description" id="description" rows="3" placeholder="Short description of the item" required></textarea>
+
+                <label>Owner Name</label>
+                <input type="text" name="ownername" id="ownername" placeholder="Your name" required>
+
+                <label>Owner Phone</label>
+                <input type="text" name="ownerPhone" id="ownerPhone" placeholder="03xxxxxxxxx" required>
+
+                <!-- hidden fields filled by JS before submit -->
+                <input type="hidden" name="qrData" id="qrData">
+                <input type="hidden" name="qrText" id="qrText">
+
+                <button type="button" id="generateQrBtn" class="btn btn-outline btn-block">🔳 Generate QR Code</button>
+
+                <div id="qrPreviewWrap" class="qr-preview-wrap" style="display:none;">
+                    <div id="qrPreview"></div>
+                    <p class="qr-hint">Looks good? Save the item below.</p>
+                </div>
+
+                <button type="submit" id="saveItemBtn" class="btn btn-primary btn-block" disabled>Save Item</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- the pure-JS QR encoder library, generates the QR client-side, no install needed -->
+    <script src="/javascripts/qrcode.js"></script>
+    <script src="/javascripts/script.js"></script>
+    <script src="/javascripts/addItem.js"></script>
+</body>
+</html>
