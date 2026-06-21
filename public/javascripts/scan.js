@@ -1,18 +1,4 @@
-// ===========================================================
-// CAMERA QR SCANNING LOGIC
-// ===========================================================
-// Library used: jsQR (pure JS, decodes QR codes from raw pixel data)
-// How it works:
-//   1. getUserMedia() asks the browser for camera access and
-//      streams live video into a hidden <video> element
-//   2. On every animation frame, we draw the current video frame
-//      onto a <canvas> (this is just so we can read pixel data,
-//      the canvas is never shown to the user)
-//   3. canvas.getImageData() gives us the raw RGBA pixel array
-//   4. jsQR(pixels, width, height) scans those pixels and, if a
-//      QR pattern is found, returns { data: "decoded text", ... }
-//   5. We stop scanning and show the decoded text on screen
-// ===========================================================
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const video = document.getElementById("scanVideo");
@@ -83,3 +69,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     startCamera();
 });
+

@@ -50,6 +50,7 @@ router.get("/all", isLoggedIn, async (req, res) => {
     res.render("allItems", { user: req.user, items });
 });
 
+
 // GET single item (used by QR scan -> verify page, public route, no login needed)
 router.get("/verify/:id", async (req, res) => {
     try {
@@ -83,5 +84,6 @@ router.post("/delete/:id", isLoggedIn, async (req, res) => {
         res.redirect("/items/all");
     }
 });
+
 
 module.exports = router;

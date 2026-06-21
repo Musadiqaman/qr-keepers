@@ -1,9 +1,4 @@
-/* ===========================================================
-   QR KEEPERS — design language
-   Theme: instrument/label aesthetic — corner viewfinder brackets
-   (the scanning motif) used as the signature element throughout,
-   paired with a mono "tag" type for meta data, like an asset label.
-=========================================================== */
+
 
 :root {
     --bg: #eef0f3;
@@ -502,3 +497,4 @@ p { color: var(--ink-soft); line-height: 1.6; }
 @media (prefers-reduced-motion: reduce) {
     * { transition: none !important; }
 }
+
