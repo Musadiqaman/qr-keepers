@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <!-- outer dark bg -->
+  <rect width="120" height="120" rx="22" fill="#11151C"/>
+  <!-- corner brackets (amber) -->
+  <rect x="17" y="17" width="26" height="5" fill="#C5780A"/>
+  <rect x="17" y="17" width="5"  height="26" fill="#C5780A"/>
+  <rect x="77" y="17" width="26" height="5"  fill="#C5780A"/>
+  <rect x="98" y="17" width="5"  height="26" fill="#C5780A"/>
+  <rect x="17" y="98" width="26" height="5"  fill="#C5780A"/>
+  <rect x="17" y="77" width="5"  height="26" fill="#C5780A"/>
+  <rect x="77" y="98" width="26" height="5"  fill="#C5780A"/>
+  <rect x="98" y="77" width="5"  height="26" fill="#C5780A"/>
+  <!-- top-left finder pattern -->
+  <rect x="27" y="27" width="24" height="24" rx="3" fill="#FFB454"/>
+  <rect x="30" y="30" width="18" height="18" rx="2" fill="#11151C"/>
+  <rect x="34" y="34" width="10" height="10" rx="1" fill="#FFB454"/>
+  <!-- top-right finder pattern -->
+  <rect x="69" y="27" width="24" height="24" rx="3" fill="#FFB454"/>
+  <rect x="72" y="30" width="18" height="18" rx="2" fill="#11151C"/>
+  <rect x="76" y="34" width="10" height="10" rx="1" fill="#FFB454"/>
+  <!-- bottom-left finder pattern -->
+  <rect x="27" y="69" width="24" height="24" rx="3" fill="#FFB454"/>
+  <rect x="30" y="72" width="18" height="18" rx="2" fill="#11151C"/>
+  <rect x="34" y="76" width="10" height="10" rx="1" fill="#FFB454"/>
+  <!-- data dots -->
+  <rect x="57" y="27" width="8" height="8" rx="1" fill="#FFB454"/>
+  <rect x="57" y="39" width="8" height="8" rx="1" fill="#FFB454" opacity="0"/>
+  <rect x="57" y="51" width="8" height="8" rx="1" fill="#FFB454"/>
+  <rect x="69" y="69" width="8" height="8" rx="1" fill="#FFB454"/>
+  <rect x="81" y="69" width="8" height="8" rx="1" fill="#FFB454" opacity="0"/>
+  <rect x="69" y="81" width="8" height="8" rx="1" fill="#FFB454" opacity="0"/>
+  <rect x="81" y="81" width="8" height="8" rx="1" fill="#FFB454"/>
+  <rect x="57" y="69" width="8" height="8" rx="1" fill="#FFB454"/>
+  <rect x="57" y="81" width="8" height="8" rx="1" fill="#FFB454" opacity="0"/>
+  <rect x="93" y="69" width="8" height="8" rx="1" fill="#FFB454"/>
+  <rect x="93" y="81" width="8" height="8" rx="1" fill="#FFB454" opacity="0"/>
+</svg>

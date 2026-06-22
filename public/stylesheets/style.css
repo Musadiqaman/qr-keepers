@@ -1,4 +1,9 @@
-
+/* ===========================================================
+   QR KEEPERS — design language
+   Theme: instrument/label aesthetic — corner viewfinder brackets
+   (the scanning motif) used as the signature element throughout,
+   paired with a mono "tag" type for meta data, like an asset label.
+=========================================================== */
 
 :root {
     --bg: #eef0f3;
@@ -72,13 +77,6 @@ p { color: var(--ink-soft); line-height: 1.6; }
     justify-content: space-between;
 }
 
-.nav-logo {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 1.25rem;
-    letter-spacing: -0.02em;
-}
-
 .nav-links {
     list-style: none;
     display: flex;
@@ -96,11 +94,44 @@ p { color: var(--ink-soft); line-height: 1.6; }
 
 .nav-links a:hover { color: var(--accent); }
 
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.nav-logo-img {
+    height: 36px;
+    width: auto;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* icon badge has hardcoded dark bg so no filter needed — just keep it as-is */
+html.dark .nav-logo-img { filter: none; }
+
+.nav-logo-text {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);        /* #14181f light → #eef1f4 dark — automatic */
+    margin: 0;
+    line-height: 1;
+}
+
 .btn-nav-cta {
-    background: var(--ink);
-    color: var(--bg) !important;
-    padding: 8px 16px;
+    background: var(--accent);
+    color: var(--accent-ink) !important;
+    padding: 8px 20px;
     border-radius: 999px;
+    font-weight: 600;
+}
+
+.btn-nav-cta:hover {
+    opacity: 0.88;
+    color: var(--accent-ink) !important;
 }
 
 .btn-nav-logout { color: var(--danger) !important; }
@@ -300,6 +331,55 @@ p { color: var(--ink-soft); line-height: 1.6; }
 .alert-error { background: rgba(192, 57, 43, 0.12); color: var(--danger); border: 1px solid rgba(192,57,43,0.3); }
 .alert-success { background: rgba(14, 143, 122, 0.12); color: var(--teal); border: 1px solid rgba(14,143,122,0.3); }
 
+.qr-instructions {
+    margin-top: 16px;
+    text-align: left;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px 18px;
+}
+
+.qr-inst-title {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    font-weight: 600;
+    margin: 0 0 12px 0;
+}
+
+.qr-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.5;
+}
+
+.qr-step:last-child { margin-bottom: 0; }
+
+.qr-step-num {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    background: var(--accent);
+    color: var(--accent-ink);
+    border-radius: 50%;
+    font-size: 0.72rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    margin-top: 1px;
+}
+
+.qr-step strong { color: var(--ink); font-weight: 600; }
+
 /* ===================== QR PREVIEW ===================== */
 .qr-preview-wrap {
     margin-top: 22px;
@@ -497,4 +577,3 @@ p { color: var(--ink-soft); line-height: 1.6; }
 @media (prefers-reduced-motion: reduce) {
     * { transition: none !important; }
 }
-

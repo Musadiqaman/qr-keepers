@@ -5,13 +5,13 @@ const bcrypt = require("bcrypt");
 const User = require("../models/User");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
-
+// GET profile page
 router.get("/", isLoggedIn, async (req, res) => {
     const user = await User.findById(req.user.id);
     res.render("profile", { user, success: null, error: null });
 });
 
-
+// POST change password
 router.post("/change-password", isLoggedIn, async (req, res) => {
     try {
         const { currentPassword, newPassword, confirmPassword } = req.body;
@@ -36,6 +36,5 @@ router.post("/change-password", isLoggedIn, async (req, res) => {
         res.render("profile", { user, success: null, error: "Something went wrong" });
     }
 });
-
 
 module.exports = router;
